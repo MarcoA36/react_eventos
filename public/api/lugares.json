@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "lugar": "Teatro MAria Auxiliadora",
+        "butacas": 800
+      },
+      {
+        "id": 2,
+        "lugar": "Predio federal"
+      },
+      {
+        "id": 3,
+        "lugar": "Teatro Municipal",
+        "butacas": 550
+      },
+      {
+        "id": 4,
+        "lugar": "Rincon Cultural",
+        "butacas": 150
+      }
+   
+  ]

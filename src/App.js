@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from "./components/navbar/Navbar"
+import Footer from "./components/footer/Footer"
+import HomePage from "./pages/Home"
+// import AtencionClientePage from "./pages/AtencionCliente"
+// import AccederPage from "./pages/Acceder"
+// import EventoPage from "./pages/Evento"
+// import { useEffect, useState } from "react"
+// import LoginAdminPage from "./pages/LoginAdmin"
+// import { Container } from "@mui/material"
+// import PanelAdminPage from "./pages/PanelAdmin"
+
 
 function App() {
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      {/* <LoginAdminPage /> */}
+      {/* <PanelAdminPage /> */}
+
+      <Navbar />
+      <HomePage/>
+      {/* <EventoPage /> */}
+      {/* <AtencionClientePage />
+      <AccederPage /> */}
+      <Footer />
+    </>
+  )
 }
 
-export default App;
+export default App
