@@ -4,9 +4,7 @@ import FormAcceder from "../components/FormAcceder"
 function AccederPage() {
     return (
         <>
-            <Container maxWidth="sm" sx={{
-                bgcolor:"#454545"
-            }}>
+            <Container maxWidth="sm">
                 
                <FormAcceder/>
 

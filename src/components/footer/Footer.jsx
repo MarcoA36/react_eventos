@@ -1,8 +1,9 @@
-import { Container, Grid, Typography, TextField, Button, Box } from "@mui/material";
+import { Container, Grid, Typography, Box } from "@mui/material";
+import FormContacto from "./FormContacto";
 
 function Footer() {
     return (
-        <Container sx={{p:4, mt:3}}>
+        <Container sx={{ p: 4, mt: 3 }}>
             <Grid container spacing={4}>
 
                 <Grid item xs={12} md={6}
@@ -19,39 +20,7 @@ function Footer() {
                 </Grid>
 
                 <Grid item xs={12} md={6}>
-                    <form>
-                        <TextField
-                            label="Nombre"
-                            variant="filled"
-                            fullWidth
-                            margin="dense"
-                            sx={{bgcolor:"white"}}
-                        />
-                        <TextField
-                            label="Correo Electrónico"
-                            variant="filled"
-                            fullWidth
-                            margin="dense"
-                            sx={{bgcolor:"white"}}
-                        />
-                        <TextField
-                            label="Mensaje"
-                            variant="filled"
-                            fullWidth
-                            multiline
-                            rows={5}
-                            margin="dense"
-                            sx={{bgcolor:"white"}}
-                        />
-                        <Button
-                            variant="contained"
-                            color="primary"
-                            type="submit"
-                            fullWidth
-                        >
-                            Enviar
-                        </Button>
-                    </form>
+                    <FormContacto />
                 </Grid>
             </Grid>
         </Container>

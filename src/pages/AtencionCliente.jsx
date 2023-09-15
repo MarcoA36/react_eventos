@@ -2,7 +2,6 @@ import { Container } from "@mui/material"
 import CardRecuperarEntrada from "../components/CardRecuperarEntrada"
 import CardMensajeCliente from "../components/CardMensajeCliente"
 
-CardMensajeCliente
 function AtencionClientePage() {
     return (
         <>

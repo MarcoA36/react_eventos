@@ -4,9 +4,11 @@ function FormAcceder() {
     return (
         <>
            <Box sx={{
-                    width:{xs: "90%", sm:"60%"},
                     m:"auto",
-                    py:5
+                    px:10,
+                    py:5,
+                    bgcolor:"#353535",
+                    borderRadius:2
                 }}>
                 <Typography variant="h4" gutterBottom>
                     INICIO DE SESIÓN
@@ -20,6 +22,7 @@ function FormAcceder() {
                         variant="filled"
                         fullWidth
                         margin="dense"
+                        sx={{bgcolor:"white"}}
                     />
                     <TextField
                         label="Contraseña"
@@ -27,6 +30,7 @@ function FormAcceder() {
                         fullWidth
                         margin="dense"
                         type="password"
+                        sx={{bgcolor:"white"}}
                     />
                     <Button
                         variant="contained"
