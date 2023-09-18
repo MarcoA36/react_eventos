@@ -1,28 +1,28 @@
 import Navbar from "./components/navbar/Navbar"
 import Footer from "./components/footer/Footer"
 import HomePage from "./pages/Home"
-// import AtencionClientePage from "./pages/AtencionCliente"
-// import AccederPage from "./pages/Acceder"
+import { Route, Routes } from "react-router-dom"
+import AtencionClientePage from "./pages/AtencionCliente"
+import AccederPage from "./pages/Acceder"
 // import EventoPage from "./pages/Evento"
-// import { useEffect, useState } from "react"
 // import LoginAdminPage from "./pages/LoginAdmin"
-// import { Container } from "@mui/material"
 // import PanelAdminPage from "./pages/PanelAdmin"
 
 
 function App() {
-
-
   return (
     <>
+
       {/* <LoginAdminPage /> */}
       {/* <PanelAdminPage /> */}
 
       <Navbar />
-      <HomePage/>
-      {/* <EventoPage /> */}
-      {/* <AtencionClientePage />
-      <AccederPage /> */}
+      <Routes>
+        <Route exact path="/" element={<HomePage />} />
+        {/* <Route exact path="/comprarevento" element={<EventoPage />} /> */}
+        <Route exact path="/atencioncliente" element={<AtencionClientePage />} />
+        <Route exact path="/acceder" element={<AccederPage />} />
+      </Routes>
       <Footer />
     </>
   )

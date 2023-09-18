@@ -4,7 +4,7 @@ import FormAcceder from "../components/FormAcceder"
 function AccederPage() {
     return (
         <>
-            <Container maxWidth="sm">
+            <Container maxWidth="sm" sx={{minHeight:"80vh"}}>
                 
                <FormAcceder/>
 

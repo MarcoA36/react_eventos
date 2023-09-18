@@ -5,6 +5,7 @@ function FormAcceder() {
         <>
            <Box sx={{
                     m:"auto",
+                    mt:10,
                     px:10,
                     py:5,
                     bgcolor:"#353535",
