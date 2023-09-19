@@ -1,9 +1,9 @@
 import { Typography} from "@mui/material"
 
-function TitleEvento() {
+function TitleEvento({eventData}) {
     return (
         <>
-           <Typography variant="h4" sx={{p:1}}>23/09 - Don Osvaldo</Typography>
+           <Typography variant="h4" sx={{p:1}}>{eventData}</Typography>
         </>
     )
 }

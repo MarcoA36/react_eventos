@@ -4,7 +4,7 @@ import CardImageEvento from "./CardImageEvento";
 import IconRedes from "./IconRedes";
 import CardInfoEvento from "./CardInfoEvento";
 
-function BoxComprarEvento() {
+function BoxComprarEvento({eventData}) {
     return (
         <>
             <Box>
@@ -15,7 +15,7 @@ function BoxComprarEvento() {
                         xs={12}
                         md={4}
                     >
-                        <CardImageEvento />
+                        <CardImageEvento eventData={eventData.image}/>
                         <IconRedes />
                     </Grid>
 
@@ -24,7 +24,7 @@ function BoxComprarEvento() {
                         md={8}
                     >
 
-                        <CardInfoEvento />
+                        <CardInfoEvento eventData={eventData} />
                     </Grid>
                 </Grid>
             </Box>

@@ -8,32 +8,32 @@ import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import TitleEvento from "./TitleEvento";
 
 
-function CardInfoEvento() {
+function CardInfoEvento({eventData}) {
     return (
         <>
             <Card>
-                <TitleEvento />
+                <TitleEvento eventData={eventData.title} />
                 <CardContent>
                     <List>
                         <ListItem>
                             <ListItemIcon>
                                 <RoomIcon />
                             </ListItemIcon>
-                            <ListItemText primary="Ubicación" secondary="Nombre del lugar" />
+                            <ListItemText primary="Ubicación" secondary={eventData.location}/>
                         </ListItem>
 
                         <ListItem>
                             <ListItemIcon>
                                 <AccessTimeIcon />
                             </ListItemIcon>
-                            <ListItemText primary="Apertura de puertas" secondary="19:00" />
+                            <ListItemText primary="Apertura de puertas" secondary={eventData.time} />
                         </ListItem>
 
                         <ListItem>
                             <ListItemIcon>
                                 <LocalAtmIcon />
                             </ListItemIcon>
-                            <ListItemText primary="Entradas online desde" secondary="$2500" />
+                            <ListItemText primary="Entradas online desde" secondary={eventData.price} />
                         </ListItem>
 
                         <ListItem>
@@ -42,7 +42,7 @@ function CardInfoEvento() {
                             </ListItemIcon>
                             <ListItemText
                                 primary="Formas de Pago"
-                                secondary="Tarjeta de crédito, Efectivo"
+                                secondary={eventData.paymentMethods}
                             />
                         </ListItem>
 

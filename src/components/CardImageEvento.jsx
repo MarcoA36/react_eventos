@@ -1,13 +1,13 @@
 import { Card, CardMedia} from "@mui/material"
 
 
-function CardImageEvento() {
+function CardImageEvento({eventData}) {
     return (
         <>
             <Card>
                 <CardMedia
                     component="img"
-                    image="src/img/eventos/donosvaldo.jpeg"
+                    image={eventData}
                     alt="descripcion"
                 />
             </Card>

@@ -4,7 +4,7 @@ import HomePage from "./pages/Home"
 import { Route, Routes } from "react-router-dom"
 import AtencionClientePage from "./pages/AtencionCliente"
 import AccederPage from "./pages/Acceder"
-// import EventoPage from "./pages/Evento"
+import EventoPage from "./pages/Evento"
 // import LoginAdminPage from "./pages/LoginAdmin"
 // import PanelAdminPage from "./pages/PanelAdmin"
 
@@ -19,9 +19,9 @@ function App() {
       <Navbar />
       <Routes>
         <Route exact path="/" element={<HomePage />} />
-        {/* <Route exact path="/comprarevento" element={<EventoPage />} /> */}
         <Route exact path="/atencioncliente" element={<AtencionClientePage />} />
         <Route exact path="/acceder" element={<AccederPage />} />
+        <Route exact path="/comprarevento" element={<EventoPage />} />
       </Routes>
       <Footer />
     </>
