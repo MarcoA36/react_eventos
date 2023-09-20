@@ -5,9 +5,7 @@ function AccederPage() {
     return (
         <>
             <Container maxWidth="sm" sx={{minHeight:"80vh"}}>
-                
                <FormAcceder/>
-
             </Container>
         </>
     )

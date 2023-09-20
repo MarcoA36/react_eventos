@@ -2,13 +2,14 @@ import { useState } from "react";
 import {
   Drawer,
   List,
-  ListItem,
   ListItemText,
   Typography,
   IconButton,
   Hidden,
+  ListItemButton,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import { Link } from "react-router-dom";
 
 function PanelAdmin() {
   const [open, setOpen] = useState(false);
@@ -40,12 +41,19 @@ function PanelAdmin() {
             CDM
           </Typography>
           <List>
-            <ListItem>
+
+            <ListItemButton
+              component={Link} 
+              to="/vereventos" 
+            >
               <ListItemText primary="Ver Eventos" />
-            </ListItem>
-            <ListItem>
-              <ListItemText primary="Agregar Evento" />
-            </ListItem>
+            </ListItemButton>
+            <ListItemButton
+              component={Link} 
+              to="/agregarevento" 
+            >
+              <ListItemText primary="Agregar evento" />
+            </ListItemButton>
           </List>
         </Drawer>
       </Hidden>
@@ -57,12 +65,18 @@ function PanelAdmin() {
             CDM
           </Typography>
           <List>
-            <ListItem>
+            <ListItemButton
+              component={Link}
+              to="/vereventos" 
+            >
               <ListItemText primary="Ver Eventos" />
-            </ListItem>
-            <ListItem>
-              <ListItemText primary="Agregar Evento" />
-            </ListItem>
+            </ListItemButton>
+            <ListItemButton
+              component={Link}
+              to="/agregarevento"
+            >
+              <ListItemText primary="Agregar evento" />
+            </ListItemButton>
           </List>
         </Drawer>
       </Hidden>

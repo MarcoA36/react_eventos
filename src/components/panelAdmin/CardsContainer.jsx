@@ -19,7 +19,7 @@ function CardsContainer() {
         fetchData();
     }, []);
     return (
-        <Box sx={{ display: "flex", flexDirection: "column", gap: 6 }}>
+        <Box sx={{ display: "flex", flexDirection: "column", gap: 6,mt:4 }}>
             {eventData.map((event, index) => (
                 <CardEvento key={index} eventData={event} />
             ))}

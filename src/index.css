@@ -3,3 +3,8 @@ body {
   background-color: #202020;
   color: white;
 }
+
+/*flechas del carousel*/
+.carousel.carousel-slider .control-arrow {
+  background: rgba(0, 0, 0, 0.286) !important;
+}
