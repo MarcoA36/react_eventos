@@ -11,7 +11,7 @@ function PanelAdminPage() {
             <Box
                 sx={{
                     width: { xs: "0", md: "160px" },
-                    transition: "width 0.3s",
+                    transition: "width 0.5s",
                 }}
             >
 

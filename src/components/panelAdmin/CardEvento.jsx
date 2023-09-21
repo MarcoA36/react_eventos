@@ -17,6 +17,22 @@ import LocalAtmIcon from "@mui/icons-material/LocalAtm";
 import PaymentIcon from "@mui/icons-material/Payment";
 
 function CardEvento({ eventData }) {
+
+  const cardMediaStyle = {
+    maxWidth: '100%',
+    height: 'auto',
+    maxHeight: 250,
+  };
+
+  const listItemStyle = {
+    margin: 0,
+    padding: 0
+  };
+
+  const buttonStyle = {
+    width: "100%"
+  }
+
   return (
     <Card sx={{borderRadius:2}}>
       <Grid container>
@@ -25,7 +41,7 @@ function CardEvento({ eventData }) {
             component="img"
             image={eventData.image}
             alt={eventData.description}
-            sx={{ maxWidth: '100%', height: 'auto', maxHeight: 250 }}
+            sx={ cardMediaStyle }
           />
         </Grid>
 
@@ -33,28 +49,28 @@ function CardEvento({ eventData }) {
           <CardContent>
             <Typography variant="h5">{eventData.title}</Typography>
             <List dense>
-              <ListItem sx={{ m: 0, p: 0 }}>
+              <ListItem sx={listItemStyle}>
                 <ListItemIcon>
                   <RoomIcon />
                 </ListItemIcon>
                 <ListItemText primary={eventData.location} />
               </ListItem>
 
-              <ListItem sx={{ m: 0, p: 0 }}>
+              <ListItem sx={listItemStyle}>
                 <ListItemIcon>
                   <AccessTimeIcon />
                 </ListItemIcon>
                 <ListItemText primary={eventData.time} />
               </ListItem>
 
-              <ListItem sx={{ m: 0, p: 0 }}>
+              <ListItem sx={listItemStyle}>
                 <ListItemIcon>
                   <LocalAtmIcon />
                 </ListItemIcon>
                 <ListItemText primary={`Desde ${eventData.price}`} />
               </ListItem>
 
-              <ListItem sx={{ m: 0, p: 0 }}>
+              <ListItem sx={listItemStyle}>
                 <ListItemIcon>
                   <PaymentIcon />
                 </ListItemIcon>
@@ -64,10 +80,10 @@ function CardEvento({ eventData }) {
           </CardContent>
 
           <CardActions>
-            <Button variant="contained" sx={{ width: "100%" }}>
+            <Button variant="contained" sx={buttonStyle}>
               Editar
             </Button>
-            <Button variant="contained" sx={{ width: "100%" }}>
+            <Button variant="contained" sx={buttonStyle}>
               Eliminar
             </Button>
           </CardActions>
