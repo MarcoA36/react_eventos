@@ -6,7 +6,7 @@
 // import AccederPage from "./pages/Acceder"
 // import EventoPage from "./pages/Evento"
 // import LoginAdminPage from "./pages/LoginAdmin"
-import PanelAdminPage from "./pages/PanelAdmin"
+import PanelAdminPage from "./panelAdmin/pages/PanelAdmin"
 
 function App() {
   return (

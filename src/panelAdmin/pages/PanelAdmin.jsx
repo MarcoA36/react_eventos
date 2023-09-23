@@ -1,8 +1,10 @@
-import FormAgregarEvento from "../components/panelAdmin/FormAgregarEvento";
-import PanelAdmin from "../components/panelAdmin/PanelAdmin";
+import FormAgregarEvento from "../componentes/FormAgregarEvento";
+import PanelAdmin from "../componentes/PanelAdmin";
 import { Box, Container } from "@mui/material";
-import CardsContainer from "../components/panelAdmin/CardsContainer";
+import CardsContainer from "../componentes/CardsContainer";
 import { Route, Routes } from "react-router-dom";
+import Evento from "../componentes/Evento";
+
 
 function PanelAdminPage() {
 
@@ -25,6 +27,7 @@ function PanelAdminPage() {
                     <Route exact path="/" element={<CardsContainer/>} />
                     <Route exact path="/agregarevento" element={<FormAgregarEvento />} />
                     <Route exact path="/vereventos" element={<CardsContainer />} />
+                    <Route exact path="/vereventos/evento/:id" element={<Evento/>} />
                 </Routes>
             </Box>
         </Container>
