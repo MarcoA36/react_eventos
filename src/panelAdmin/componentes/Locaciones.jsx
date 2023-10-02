@@ -1,3 +1,44 @@
+// import { Container, List } from "@mui/material";
+// // import CardEvento from "./CardEvento";
+// import { useEffect, useState } from "react";
+// import ListItemLocaciones from "./ListItemLocacion";
+
+// function Locaciones() {
+//     const [eventData, setEventData] = useState([]);
+
+//     const fetchData = async () => {
+//         try {
+//             const response = await fetch("http://localhost:3001/lugares");
+//             const data = await response.json();
+//             setEventData(data);
+//         } catch (error) {
+//             console.error("Error al obtener los datos:", error);
+//         }
+//     };
+
+//     useEffect(() => {
+//         fetchData();
+//     }, []);
+//     return (
+
+//         <Container sx={{ mt: { xs: 4, md: 0 } }}>
+//             <List>
+//                 {eventData.map((event, index) => (
+//                         // <CardEvento key={index} eventData={event} />
+//                         <ListItemLocaciones key={index} eventData={event} />
+
+//                 ))}
+//             </List>
+//         </Container>
+
+
+//     );
+// }
+
+// export default Locaciones;
+
+
+
 import React, { useState, useEffect } from 'react';
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
@@ -33,13 +74,12 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 
 
-
 export default function CustomizedTables() {
     const [eventData, setEventData] = useState([]);
 
     const fetchData = async () => {
         try {
-            const response = await fetch("http://localhost:3001/eventos");
+            const response = await fetch("http://localhost:3001/lugares");
             const data = await response.json();
             setEventData(data);
         } catch (error) {
@@ -57,10 +97,9 @@ export default function CustomizedTables() {
                 <Table aria-label="customized table">
                     <TableHead>
                         <TableRow>
-                            <StyledTableCell>Evento</StyledTableCell>
-                            <StyledTableCell align="right">Lugar</StyledTableCell>
-                            <StyledTableCell align="right">Fecha</StyledTableCell>
-                            <StyledTableCell align="right">Hora</StyledTableCell>
+                        <StyledTableCell>Lugar</StyledTableCell>
+                            <StyledTableCell align="right">Ubicacion</StyledTableCell>
+                            <StyledTableCell align="right">Capacidad</StyledTableCell>
                             <StyledTableCell align="right"></StyledTableCell>
                         </TableRow>
                     </TableHead>
@@ -68,15 +107,14 @@ export default function CustomizedTables() {
                         {eventData.map((event) => (
                             <StyledTableRow key={event.id}>
                                 <StyledTableCell component="th" scope="row">
-                                    {event.title}
+                                    {event.lugar}
                                 </StyledTableCell>
-                                <StyledTableCell align="right">{event.location}</StyledTableCell>
-                                <StyledTableCell align="right">{event.date}</StyledTableCell>
-                                <StyledTableCell align="right">{event.time}</StyledTableCell>
+                                <StyledTableCell align="right">{event.ubicacion}</StyledTableCell>
+                                <StyledTableCell align="right">{event.capacidad}</StyledTableCell>
                                 <StyledTableCell align="right">
                                     <Button
                                         component={Link}
-                                        to={`/vereventos/evento/${event.id}`}
+                                        to={`/locaciones/locacion/${event.id}`}
                                         color="primary"
                                     >
                                         Ver

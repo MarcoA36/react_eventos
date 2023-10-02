@@ -20,12 +20,20 @@ function PanelAdmin() {
 
   const adminLinks = [
     {
-      title: "Ver Evetos",
+      title: "Evetos",
       path: "/vereventos",
     },
     {
       title: "Agregar Evento",
       path: "/agregarevento",
+    },
+    {
+      title: "Locaciones",
+      path: "/locaciones",
+    },
+    {
+      title: "Agregar Locación",
+      path: "/agregarlocacion",
     },
     {
       title: "Informes",
@@ -34,10 +42,6 @@ function PanelAdmin() {
     {
       title: "Promociones",
       path: "/promociones",
-    },
-    {
-      title: "Soporte y ayuda",
-      path: "/soporte",
     },
     {
       title: "Registro de actividad",

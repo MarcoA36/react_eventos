@@ -8,7 +8,7 @@ function Header() {
 
   const fetchImagePortada = async () => {
     try {
-      const response = await fetch("api/eventosImgPortada.json");
+      const response = await fetch("http://localhost:3001/imgHeader");
       const data = await response.json();
       setImageHeader(data);
     } catch (error) {

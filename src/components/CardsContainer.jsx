@@ -12,7 +12,7 @@ function CardsContainer() {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("api/eventos.json");
+      const response = await fetch("http://localhost:3001/eventos");
       const data = await response.json();
       setEventData(data);
     } catch (error) {

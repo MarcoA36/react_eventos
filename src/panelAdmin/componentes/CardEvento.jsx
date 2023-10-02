@@ -4,17 +4,8 @@ import {
   CardMedia,
   CardActions,
   Button,
-  Grid,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
   Typography,
 } from "@mui/material";
-import RoomIcon from "@mui/icons-material/Room";
-import AccessTimeIcon from "@mui/icons-material/AccessTime";
-import LocalAtmIcon from "@mui/icons-material/LocalAtm";
-import PaymentIcon from "@mui/icons-material/Payment";
 import { Link } from "react-router-dom";
 
 function CardEvento({ eventData }) {

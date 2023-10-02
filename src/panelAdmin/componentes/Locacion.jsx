@@ -7,53 +7,38 @@ import PaymentIcon from '@mui/icons-material/Payment';
 import LocalAtmIcon from '@mui/icons-material/LocalAtm';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 
-function Evento() {
+function Locacion() {
     const { id } = useParams();
-    const [evento, setEvento] = useState(null);
+    const [locacion, setLocacion] = useState(null);
 
     useEffect(() => {
-        const fetchEvento = async () => {
+        const fetchlocacion = async () => {
             try {
-                const response = await fetch(`http://localhost:3001/eventos/${id}`);
+                const response = await fetch(`http://localhost:3001/lugares/${id}`);
                 if (response.ok) {
                     const data = await response.json();
-                    setEvento(data);
+                    setLocacion(data);
                 } else {
-                    console.error("Error al obtener el evento");
+                    console.error("Error al obtener el locacion");
                 }
             } catch (error) {
                 console.error("Error en la solicitud:", error);
             }
         };
 
-        fetchEvento();
+        fetchlocacion();
     }, [id]);
 
     const listaItems = [
         {
             primary: "Ubicación",
-            secondary: evento?.location || "",
+            secondary: locacion?.ubicacion || "",
             icono: <RoomIcon />
         },
         {
-            primary: "Apertura de puertas",
-            secondary: evento?.time || "",
+            primary: "Capacidad",
+            secondary: locacion?.capacidad || "",
             icono: <AccessTimeIcon />
-        },
-        {
-            primary: "Entradas online desde",
-            secondary: evento?.price || "",
-            icono: <LocalAtmIcon />
-        },
-        {
-            primary: "Formas de Pago",
-            secondary: evento?.paymentMethods?.join(", ") || "",
-            icono: <PaymentIcon />
-        },
-        {
-            primary: "Fecha del Evento",
-            secondary: evento?.date || "",
-            icono: <DateRangeIcon />
         },
     ];
 
@@ -68,11 +53,10 @@ function Evento() {
         <>
             <Container sx={{ mt: { xs: 4, md: 0 } }}>
                 <Box sx={boxStyle}>
-                <Typography variant="h3">{evento ? evento.title : "nombre del evento"}</Typography>
-                 
+                    <Typography variant="h3">{locacion ? locacion.lugar : "nombre del locacion"}</Typography>
                         <List>
                             {listaItems.map((item, index) => (
-                                <ListItem key={index} sx={{bgcolor:"#91929333", mb:2, borderRadius:2}}>
+                                <ListItem key={index} sx={{bgcolor:"#90909044", mb:2, borderRadius:2}}>
                                     <ListItemIcon>
                                         {item.icono}
                                     </ListItemIcon>
@@ -80,6 +64,7 @@ function Evento() {
                                 </ListItem>
                             ))}
                         </List>
+
                     <CardActions>
                         <Button variant="contained">
                             Editar
@@ -89,8 +74,9 @@ function Evento() {
                         </Button>
                     </CardActions>
                 </Box>
-        
-                 
+
+
+
 
 
             </Container>
@@ -98,4 +84,4 @@ function Evento() {
     );
 }
 
-export default Evento;
+export default Locacion;
