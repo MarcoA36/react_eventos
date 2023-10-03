@@ -1,10 +1,7 @@
-import { Box, Button, Card, CardActions, CardContent, Container, List, ListItem, ListItemIcon, ListItemText, Typography } from "@mui/material";
+import { Box, Button, CardActions, Container, List, ListItem, ListItemIcon, ListItemText, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import RoomIcon from '@mui/icons-material/Room';
-import DateRangeIcon from "@mui/icons-material/DateRange";
-import PaymentIcon from '@mui/icons-material/Payment';
-import LocalAtmIcon from '@mui/icons-material/LocalAtm';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 
 function Locacion() {
@@ -45,25 +42,29 @@ function Locacion() {
     const boxStyle = {
         background: "#151515",
         padding: 4,
-        borderRadius:4
+        borderRadius: 4
     }
-
 
     return (
         <>
             <Container sx={{ mt: { xs: 4, md: 0 } }}>
                 <Box sx={boxStyle}>
                     <Typography variant="h3">{locacion ? locacion.lugar : "nombre del locacion"}</Typography>
-                        <List>
-                            {listaItems.map((item, index) => (
-                                <ListItem key={index} sx={{bgcolor:"#90909044", mb:2, borderRadius:2}}>
-                                    <ListItemIcon>
-                                        {item.icono}
-                                    </ListItemIcon>
-                                    <ListItemText primary={item.primary} secondary={item.secondary} />
-                                </ListItem>
-                            ))}
-                        </List>
+                    <List>
+                        {listaItems.map((item, index) => (
+                            <ListItem key={index} sx={{ bgcolor: "#90909044", mb: 2, borderRadius: 2 }}>
+                                <ListItemIcon sx={{color:"white"}}>
+                                    {item.icono}
+                                </ListItemIcon>
+                                <ListItemText
+                                    primary={item.primary}
+                                    secondary={item.secondary}
+                                    primaryTypographyProps={{ color: "primary", fontWeight:"bold" }}
+                                    secondaryTypographyProps={{ color: "white" }}
+                                />
+                            </ListItem>
+                        ))}
+                    </List>
 
                     <CardActions>
                         <Button variant="contained">
@@ -74,11 +75,6 @@ function Locacion() {
                         </Button>
                     </CardActions>
                 </Box>
-
-
-
-
-
             </Container>
         </>
     );

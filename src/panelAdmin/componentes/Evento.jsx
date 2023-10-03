@@ -1,4 +1,4 @@
-import { Box, Button, Card, CardActions, CardContent, Container, List, ListItem, ListItemIcon, ListItemText, Typography } from "@mui/material";
+import { Box, Button, CardActions, Container, List, ListItem, ListItemIcon, ListItemText, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import RoomIcon from '@mui/icons-material/Room';
@@ -73,10 +73,15 @@ function Evento() {
                         <List>
                             {listaItems.map((item, index) => (
                                 <ListItem key={index} sx={{bgcolor:"#91929333", mb:2, borderRadius:2}}>
-                                    <ListItemIcon>
+                                    <ListItemIcon sx={{color:"white"}}>
                                         {item.icono}
                                     </ListItemIcon>
-                                    <ListItemText primary={item.primary} secondary={item.secondary} />
+                                    <ListItemText 
+                                    primary={item.primary} 
+                                    secondary={item.secondary} 
+                                    primaryTypographyProps={{ color: "primary", fontWeight:"bold" }}
+                                    secondaryTypographyProps={{ color: "white" }}
+                                    />
                                 </ListItem>
                             ))}
                         </List>

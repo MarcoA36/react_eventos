@@ -10,6 +10,10 @@ import { Link } from "react-router-dom";
 
 function CardEvento({ eventData }) {
 
+  const iconStyle = {
+    color:"black"
+  }
+
   // const navigate = useNavigate();
 
   // const handleComprarClick = () => {
@@ -18,7 +22,7 @@ function CardEvento({ eventData }) {
   // };
   return (
     <>
-      <Card>
+      <Card >
         <CardMedia
           component="img"
           image={eventData.image}
@@ -31,28 +35,28 @@ function CardEvento({ eventData }) {
           <List dense>
             <ListItem sx={{ m: 0, p: 0 }}>
               <ListItemIcon>
-                <RoomIcon />
+                <RoomIcon  sx={iconStyle}/>
               </ListItemIcon>
               <ListItemText primary={eventData.location} />
             </ListItem>
 
             <ListItem sx={{ m: 0, p: 0 }}>
               <ListItemIcon>
-                <AccessTimeIcon />
+                <AccessTimeIcon sx={iconStyle} />
               </ListItemIcon>
               <ListItemText primary={eventData.time} />
             </ListItem>
 
             <ListItem sx={{ m: 0, p: 0 }}>
               <ListItemIcon>
-                <LocalAtmIcon />
+                <LocalAtmIcon sx={iconStyle}/>
               </ListItemIcon>
               <ListItemText primary={`Desde ${eventData.price}`} />
             </ListItem>
 
             <ListItem sx={{ m: 0, p: 0 }}>
               <ListItemIcon>
-                <PaymentIcon />
+                <PaymentIcon sx={iconStyle}/>
               </ListItemIcon>
               <ListItemText primary={eventData.paymentMethods} />
             </ListItem>
@@ -66,7 +70,7 @@ function CardEvento({ eventData }) {
             }}
             variant="contained"
             component={Link} 
-            to="/comprarevento" 
+            to={`/comprarevento/${eventData.id}`}
           >
             Comprar
           </Button>

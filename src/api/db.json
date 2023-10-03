@@ -5,7 +5,7 @@
       "date": "23/09/2023",
       "title": "Inigualables",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe asperiores quibusdam commodi provident illo veritatis ipsa? Inventore, minus vel! Delectus dolores facere qui ea error.",
-      "image": "img/eventos/4.jpeg",
+      "image": "/img/eventos/4.jpeg",
       "location": "Teatro María Auxiliadora",
       "time": "19:00",
       "price": "$15000.00",
@@ -18,7 +18,7 @@
       "date": "30/09/2023",
       "title": "TSJUDER",
       "description": "Descripción del concierto de rock.",
-      "image": "img/eventos/metal.jpeg",
+      "image": "/img/eventos/metal.jpeg",
       "location": "Teatro municipal",
       "time": "20:00",
       "price": "$12000.00",
@@ -31,7 +31,7 @@
       "date": "10/10/2023",
       "title": "El show de Carmen",
       "description": "Descripción del festival de cine.",
-      "image": "img/eventos/aa.jpeg",
+      "image": "/img/eventos/aa.jpeg",
       "location": "Teatro Maria Auxiliadora",
       "time": "22:00",
       "price": "$3000.00",
@@ -44,7 +44,7 @@
       "date": "10/10/2023",
       "title": "Pilar Sordo",
       "description": "Descripción del evento 5.",
-      "image": "img/eventos/1.jpeg",
+      "image": "/img/eventos/1.jpeg",
       "location": "Teatro Maria Auxiliadora",
       "time": "22:00",
       "price": "$18000.00",
@@ -57,7 +57,7 @@
       "date": "10/10/2023",
       "title": "Don Osvaldo",
       "description": "Descripción del evento 6.",
-      "image": "img/eventos/donosvaldo.jpeg",
+      "image": "/img/eventos/donosvaldo.jpeg",
       "location": "Predio federal",
       "time": "22:00",
       "price": "$15000.00",
@@ -70,7 +70,7 @@
       "date": "10/10/2023",
       "title": "OctoberFest",
       "description": "Descripción del evnto 7.",
-      "image": "img/eventos/octoberfest.jpeg",
+      "image": "/img/eventos/octoberfest.jpeg",
       "location": "El rincon cultural",
       "time": "18:30",
       "price": "$3000.00",
@@ -83,7 +83,7 @@
       "date": "10/10/2023",
       "title": "Capussoto",
       "description": "Descripción del evnto 7.",
-      "image": "img/eventos/capussoto.jpeg",
+      "image": "/img/eventos/capussoto.jpeg",
       "location": "Teatro Maria Auxiliadora",
       "time": "22:00",
       "price": "$18000.00",
@@ -93,53 +93,6 @@
     },
     {
       "id": 9,
-      "title": "Los nuris",
-      "date": "2023-09-06",
-      "time": "03:09",
-      "location": "",
-      "price": "",
-      "paymentMethods": []
-    },
-    {
-      "id": 10,
-      "title": "nuevo evento",
-      "date": "1211-12-12",
-      "time": "12:12",
-      "location": "",
-      "price": "",
-      "paymentMethods": [],
-      "titlee": "a",
-      "titlde": ""
-    },
-    {
-      "id": 11,
-      "title": "csac",
-      "date": "2023-10-11",
-      "time": "21:54",
-      "location": "",
-      "price": "125",
-      "paymentMethods": []
-    },
-    {
-      "id": 12,
-      "title": "aa",
-      "date": "2023-10-01",
-      "time": "19:55",
-      "location": "Predio federal",
-      "price": "123",
-      "paymentMethods": []
-    },
-    {
-      "id": 13,
-      "title": "csa",
-      "date": "2023-10-06",
-      "time": "20:05",
-      "location": "Teatro Municipal",
-      "price": "123",
-      "paymentMethods": []
-    },
-    {
-      "id": 14,
       "title": "csa",
       "date": "",
       "time": "",
@@ -148,8 +101,26 @@
       "paymentMethods": []
     },
     {
-      "id": 15,
-      "title": "s",
+      "id": 10,
+      "title": "cas",
+      "date": "",
+      "time": "",
+      "location": "",
+      "price": "",
+      "paymentMethods": []
+    },
+    {
+      "id": 11,
+      "title": "aaaa",
+      "date": "",
+      "time": "",
+      "location": "",
+      "price": "",
+      "paymentMethods": []
+    },
+    {
+      "id": 12,
+      "title": "aaaa",
       "date": "",
       "time": "",
       "location": "",
@@ -202,21 +173,21 @@
       "date": "10/10/2023",
       "title": "Nombre del evento",
       "description": "Descripción del evnto 7.",
-      "image": "img/eventos/octoberfest.jpeg"
+      "image": "img/portada1.jpg"
     },
     {
       "id": 3,
       "date": "10/10/2023",
       "title": "Nombre del evento",
       "description": "Descripción del evnto 7.",
-      "image": "img/eventos/donosvaldo.jpeg"
+      "image": "img/portada2.jpg"
     },
     {
       "id": 4,
       "date": "10/10/2023",
       "title": "Nombre del evento",
       "description": "Descripción del evnto 7.",
-      "image": "img/eventos/evento_portada_1.png"
+      "image": "img/portada3.jpg"
     }
   ]
 }

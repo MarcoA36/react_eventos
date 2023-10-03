@@ -55,9 +55,6 @@ function FormAgregarLocacion() {
     borderRadius: 3
   }
 
-  const textFieldStyle = {
-    bgcolor: "white"
-  }
 
   return (
     <Box

@@ -2,6 +2,7 @@ import { Card, CardMedia} from "@mui/material"
 
 
 function CardImageEvento({eventData}) {
+    console.log(eventData)
     return (
         <>
             <Card>

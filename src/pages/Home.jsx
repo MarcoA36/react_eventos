@@ -15,7 +15,8 @@ function HomePage() {
                     gap: "20px"
                 }}
             >
-                <Header />           
+                <Header />  
+                         
                 <CardsContainer/>
             </Container>
         </>

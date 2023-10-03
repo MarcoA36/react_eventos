@@ -31,6 +31,8 @@ function CardsContainer() {
           event.title.toLowerCase().includes(search.toLowerCase())
         )
       : eventData;
+
+      const lastEvents = filteredEvents.slice(-12);
   
     return (
       <>
@@ -39,7 +41,7 @@ function CardsContainer() {
         <Search handleSearch={setSearch} />
 
           <Grid container spacing={4}>
-            {filteredEvents.map((event, index) => (
+            {lastEvents.map((event, index) => (
               <Grid key={index} item xs={12} sm={6} md={4} lg={2}>
                 <CardEvento eventData={event} />
               </Grid>

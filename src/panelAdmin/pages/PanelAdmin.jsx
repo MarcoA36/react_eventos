@@ -1,12 +1,14 @@
-import FormAgregarEvento from "../componentes/FormAgregarEvento";
-import PanelAdmin from "../componentes/PanelAdmin";
 import { Box, Container } from "@mui/material";
-import CardsContainer from "../componentes/CardsContainer";
 import { Route, Routes } from "react-router-dom";
+
+import PanelAdmin from "../componentes/PanelAdmin";
+
+import TableEventos from "../componentes/TableEventos";
 import Evento from "../componentes/Evento";
-import Locaciones from "../componentes/Locaciones";
-import FormAgregarLocacion from "../componentes/FormAgregarLocacion";
+import FormAgregarEvento from "../componentes/FormAgregarEvento";
+import TableLocaciones from "../componentes/TableLocaciones";
 import Locacion from "../componentes/Locacion";
+import FormAgregarLocacion from "../componentes/FormAgregarLocacion";
 
 function PanelAdminPage() {
 
@@ -26,11 +28,11 @@ function PanelAdminPage() {
 
             <Box sx={{ flex: 1, pt: "16px" }}>
                 <Routes>
-                    <Route exact path="/" element={<CardsContainer/>} />
+                    <Route exact path="/" element={<TableEventos/>} />
                     <Route exact path="/agregarevento" element={<FormAgregarEvento />} />
-                    <Route exact path="/vereventos" element={<CardsContainer />} />
+                    <Route exact path="/vereventos" element={<TableEventos />} />
                     <Route exact path="/vereventos/evento/:id" element={<Evento/>} />
-                    <Route exact path="/locaciones" element={<Locaciones/>} />
+                    <Route exact path="/locaciones" element={<TableLocaciones/>} />
                     <Route exact path="/locaciones/locacion/:id" element={<Locacion/>} />
                     <Route exact path="/agregarlocacion" element={<FormAgregarLocacion/>} />
                 </Routes>
