@@ -20,21 +20,20 @@ function PanelAdminPage() {
                     transition: "width 0.5s",
                 }}
             >
-
                 <PanelAdmin />
-
-
             </Box>
 
             <Box sx={{ flex: 1, pt: "16px" }}>
                 <Routes>
-                    <Route exact path="/" element={<TableEventos/>} />
+                    <Route exact path="/" element={<TableEventos />} />
                     <Route exact path="/agregarevento" element={<FormAgregarEvento />} />
                     <Route exact path="/vereventos" element={<TableEventos />} />
-                    <Route exact path="/vereventos/evento/:id" element={<Evento/>} />
-                    <Route exact path="/locaciones" element={<TableLocaciones/>} />
-                    <Route exact path="/locaciones/locacion/:id" element={<Locacion/>} />
-                    <Route exact path="/agregarlocacion" element={<FormAgregarLocacion/>} />
+                    <Route exact path="/vereventos/evento/:id" element={<Evento />} />
+                    <Route exact path="/editarevento/:id" element={<FormAgregarEvento />} />
+                    <Route exact path="/locaciones" element={<TableLocaciones />} />
+                    <Route exact path="/locaciones/locacion/:id" element={<Locacion />} />
+                    <Route exact path="/agregarlocacion" element={<FormAgregarLocacion />} />
+                    <Route exact path="/editarlocacion/:id" component={<FormAgregarLocacion />} />
                 </Routes>
             </Box>
         </Container>

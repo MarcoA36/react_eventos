@@ -62,16 +62,16 @@ export default function TableEventos() {
                 <Loader />
             ) : (
                 <TableContainer component={Paper}>
-                    <Table aria-label="customized table">
+                    <Table aria-label="customized table" >
                         <TableHead>
                             <TableRow>
                                 <StyledTableCell>Evento</StyledTableCell>
-                                <StyledTableCell align="right">Lugar</StyledTableCell>
-                                <StyledTableCell align="right">Fecha</StyledTableCell>
-                                <StyledTableCell align="right">Hora</StyledTableCell>
-                                <StyledTableCell align="right">Entradas</StyledTableCell>
-                                <StyledTableCell align="right">Disponibles</StyledTableCell>
-                                <StyledTableCell align="right"></StyledTableCell>
+                                <StyledTableCell align="center">Fecha</StyledTableCell>
+                                <StyledTableCell align="center">Hora</StyledTableCell>
+                                <StyledTableCell align="center">Lugar</StyledTableCell>
+                                <StyledTableCell align="center">Entradas</StyledTableCell>
+                                <StyledTableCell align="center">Disponibles</StyledTableCell>
+                                <StyledTableCell align="center"></StyledTableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
@@ -80,12 +80,12 @@ export default function TableEventos() {
                                     <StyledTableCell component="th" scope="row">
                                         {event.title}
                                     </StyledTableCell>
-                                    <StyledTableCell align="right">{event.location}</StyledTableCell>
-                                    <StyledTableCell align="right">{event.date}</StyledTableCell>
-                                    <StyledTableCell align="right">{event.time}</StyledTableCell>
-                                    <StyledTableCell align="right">800</StyledTableCell>
-                                    <StyledTableCell align="right">54</StyledTableCell>
-                                    <StyledTableCell align="right">
+                                    <StyledTableCell align="center">{event.date}</StyledTableCell>
+                                    <StyledTableCell align="center">{event.time}</StyledTableCell>
+                                    <StyledTableCell align="center">{event.location}</StyledTableCell>
+                                    <StyledTableCell align="center">800</StyledTableCell>
+                                    <StyledTableCell align="center">54</StyledTableCell>
+                                    <StyledTableCell align="center">
                                         <Button
                                             component={Link}
                                             to={`/vereventos/evento/${event.id}`}

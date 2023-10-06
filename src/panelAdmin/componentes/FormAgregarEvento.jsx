@@ -9,9 +9,14 @@ import {
   FormControlLabel,
   Checkbox,
 } from "@mui/material";
+import { useParams } from "react-router-dom";
+import { fetchEventoById, fetchLocaciones } from "../api/api";
+
 
 function FormAgregarEvento() {
+  const { id } = useParams();
   const [locaciones, setLocaciones] = useState([]);
+
   const [selectedPayments, setSelectedPayments] = useState([]);
   const paymentOptions = ["Tarjeta de crédito", "PayPal", "Efectivo", "Transferencia bancaria"];
 
@@ -25,28 +30,44 @@ function FormAgregarEvento() {
     paymentMethods: [],
   });
 
-    const fetchLocaciones = async () => {
-    try {
-      const response = await fetch("http://localhost:3001/lugares");
-      const data = await response.json();
-      setLocaciones(data);
-    } catch (error) {
-      console.error("Error al obtener los datos:", error);
-    }
-  };
-
   useEffect(() => {
-    fetchLocaciones();
-  }, []);
+    const fetchData = async () => {
+      try {
+        const locacionesData = await fetchLocaciones();
+        setLocaciones(locacionesData);
+
+        if (id) {
+          const eventoData = await fetchEventoById(id);
+          setNuevoEvento(eventoData);
+          setSelectedPayments(eventoData.paymentMethods || []);
+        }
+      } catch (error) {
+        console.error("Error al obtener datos:", error);
+      }
+    };
+
+    fetchData();
+  }, [id]);
+
+
+
 
   const handlePaymentChange = (event) => {
-    const value = event.target.value;
-    if (selectedPayments.includes(value)) {
-      setSelectedPayments(selectedPayments.filter((item) => item !== value));
-    } else {
-      setSelectedPayments([...selectedPayments, value]);
-    }
+    const value = event.target.name;
+    setSelectedPayments((prevPayments) => {
+      const updatedPayments = new Set(prevPayments);
+
+      if (updatedPayments.has(value)) {
+        updatedPayments.delete(value);
+      } else {
+        updatedPayments.add(value);
+      }
+
+      return Array.from(updatedPayments);
+    });
   };
+
+
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -56,21 +77,28 @@ function FormAgregarEvento() {
     }));
   };
 
+
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      // Realiza la solicitud POST para agregar el nuevo evento
-      const response = await fetch("http://localhost:3001/eventos", {
-        method: "POST",
+      const method = id ? 'PUT' : 'POST';
+      const url = id ? `http://localhost:3001/eventos/${id}` : 'http://localhost:3001/eventos';
+
+      const response = await fetch(url, {
+        method: method,
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(nuevoEvento),
+        body: JSON.stringify({
+          ...nuevoEvento,
+          paymentMethods: selectedPayments,
+        }),
       });
 
       if (response.ok) {
-        console.log("Evento agregado exitosamente");
+        console.log(id ? "Evento editado exitosamente" : "Evento agregado exitosamente");
         setNuevoEvento({
           id: '',
           title: '',
@@ -80,8 +108,9 @@ function FormAgregarEvento() {
           price: '',
           paymentMethods: [],
         });
+        setSelectedPayments([]);
       } else {
-        console.error("Error al agregar el evento");
+        console.error(id ? "Error al editar el evento" : "Error al agregar el evento");
       }
     } catch (error) {
       console.error("Error en la solicitud:", error);
@@ -107,7 +136,7 @@ function FormAgregarEvento() {
       sx={boxStyle}
     >
       <Typography variant="h4" textAlign="center">
-        Agregar Evento
+        {id ? "Editar Evento" : "Agregar Evento"}
       </Typography>
       <form onSubmit={handleSubmit}>
         <TextField
@@ -171,7 +200,6 @@ function FormAgregarEvento() {
         />
 
         <Box>
-          {/* <Typography>Formas de pago</Typography> */}
           {paymentOptions.map((payment) => (
             <FormControlLabel
               key={payment}
@@ -180,7 +208,7 @@ function FormAgregarEvento() {
                   checked={selectedPayments.includes(payment)}
                   onChange={handlePaymentChange}
                   value={payment}
-                  name="paymentMethods"
+                  name={payment}
                 />
               }
               label={payment}
@@ -194,7 +222,7 @@ function FormAgregarEvento() {
           type="submit"
           fullWidth
         >
-          Agregar Evento
+          {id ? "Guardar Cambios" : "Agregar Evento"}
         </Button>
       </form>
     </Box>

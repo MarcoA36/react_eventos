@@ -1,6 +1,7 @@
-import { Box, Button, CardActions, Container, List, ListItem, ListItemIcon, ListItemText, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+
+import { Box, Button, CardActions, Container, List, ListItem, ListItemIcon, ListItemText, Typography } from "@mui/material";
 import RoomIcon from '@mui/icons-material/Room';
 import DateRangeIcon from "@mui/icons-material/DateRange";
 import PaymentIcon from '@mui/icons-material/Payment';
@@ -10,6 +11,7 @@ import AccessTimeIcon from '@mui/icons-material/AccessTime';
 function Evento() {
     const { id } = useParams();
     const [evento, setEvento] = useState(null);
+    // const [isEditing, setIsEditing] = useState(false);
 
     useEffect(() => {
         const fetchEvento = async () => {
@@ -29,11 +31,31 @@ function Evento() {
         fetchEvento();
     }, [id]);
 
+    // const handleEditClick = () => {
+    //     setIsEditing(true);
+    // };
+
+    // const handleSave = (formData) => {
+    //     // Aquí deberías realizar la lógica para guardar los cambios
+    //     // Puedes hacer una solicitud PUT al servidor
+    //     console.log("Guardando cambios:", formData);
+    //     setIsEditing(false);
+    // };
+
+    // const handleCancelClick = () => {
+    //     setIsEditing(false);
+    // };
+
     const listaItems = [
         {
             primary: "Ubicación",
             secondary: evento?.location || "",
             icono: <RoomIcon />
+        },
+        {
+            primary: "Fecha del Evento",
+            secondary: evento?.date || "",
+            icono: <DateRangeIcon />
         },
         {
             primary: "Apertura de puertas",
@@ -50,55 +72,58 @@ function Evento() {
             secondary: evento?.paymentMethods?.join(", ") || "",
             icono: <PaymentIcon />
         },
-        {
-            primary: "Fecha del Evento",
-            secondary: evento?.date || "",
-            icono: <DateRangeIcon />
-        },
+        
     ];
 
     const boxStyle = {
         background: "#151515",
         padding: 4,
-        borderRadius:4
+        borderRadius: 4
     }
 
 
     return (
         <>
-            <Container sx={{ mt: { xs: 4, md: 0 } }}>
-                <Box sx={boxStyle}>
-                <Typography variant="h3">{evento ? evento.title : "nombre del evento"}</Typography>
-                 
+            <>
+                <Container sx={{ mt: { xs: 4, md: 0 } }}>
+                    <Box sx={boxStyle}>
+                        <Typography variant="h3">{evento ? evento.title : "nombre del evento"}</Typography>
                         <List>
                             {listaItems.map((item, index) => (
-                                <ListItem key={index} sx={{bgcolor:"#91929333", mb:2, borderRadius:2}}>
-                                    <ListItemIcon sx={{color:"white"}}>
+                                <ListItem
+                                    key={index}
+                                    sx={{
+                                        mb: 1
+                                    }}
+                                >
+                                    <ListItemIcon sx={{ color: "white" }}>
                                         {item.icono}
                                     </ListItemIcon>
-                                    <ListItemText 
-                                    primary={item.primary} 
-                                    secondary={item.secondary} 
-                                    primaryTypographyProps={{ color: "primary", fontWeight:"bold" }}
-                                    secondaryTypographyProps={{ color: "white" }}
+                                    <ListItemText
+                                        primary={item.primary}
+                                        secondary={item.secondary}
+                                        primaryTypographyProps={{ color: "primary", fontWeight: "bold" }}
+                                        secondaryTypographyProps={{ color: "white" }}
+                                        sx={{ color: "white" }}
                                     />
                                 </ListItem>
                             ))}
                         </List>
-                    <CardActions>
-                        <Button variant="contained">
-                            Editar
-                        </Button>
-                        <Button variant="contained">
-                            Eliminar
-                        </Button>
-                    </CardActions>
-                </Box>
-        
-                 
+                        <CardActions sx={{ gap: 1 }}>
 
+                            <Button variant="contained" component={Link}
+                                to={`/editarevento/${id}`}
+                            >
+                                Editar
+                            </Button>
+                            <Button variant="contained">
+                                Eliminar
+                            </Button>
+                        </CardActions>
+                    </Box>
 
-            </Container>
+                </Container>
+            </>
         </>
     );
 }

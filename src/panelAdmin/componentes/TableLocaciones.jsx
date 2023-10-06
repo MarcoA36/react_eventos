@@ -65,9 +65,9 @@ export default function TableLocaciones() {
                     <TableHead>
                         <TableRow>
                         <StyledTableCell>Lugar</StyledTableCell>
-                            <StyledTableCell align="right">Ubicación</StyledTableCell>
-                            <StyledTableCell align="right">Capacidad</StyledTableCell>
-                            <StyledTableCell align="right"></StyledTableCell>
+                            <StyledTableCell align="center">Ubicación</StyledTableCell>
+                            <StyledTableCell align="center">Capacidad</StyledTableCell>
+                            <StyledTableCell align="center"></StyledTableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -76,9 +76,9 @@ export default function TableLocaciones() {
                                 <StyledTableCell component="th" scope="row">
                                     {event.lugar}
                                 </StyledTableCell>
-                                <StyledTableCell align="right">{event.ubicacion}</StyledTableCell>
-                                <StyledTableCell align="right">{event.capacidad}</StyledTableCell>
-                                <StyledTableCell align="right">
+                                <StyledTableCell align="center">{event.ubicacion}</StyledTableCell>
+                                <StyledTableCell align="center">{event.capacidad}</StyledTableCell>
+                                <StyledTableCell align="center">
                                     <Button
                                         component={Link}
                                         to={`/locaciones/locacion/${event.id}`}
